@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hause · Arquitectura + Construcción — Mejores espacios | Asunción, Paraguay</title>
+<meta name="description" content="Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos. Diseño y obra del mismo equipo." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hause · Arquitectura + Construcción — Mejores espacios" />
+<meta property="og:description" content="Proyectos residenciales, comerciales y corporativos. Diseño y obra de un solo equipo. Asunción, Paraguay." />
+<meta property="og:image" content="img/og-cover.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* =====================================================================
+   HAUSE — sistema de diseño
+   Editorial de estudio de arquitectura: tinta casi negra, fondo hueso,
+   rojo Hause como acento filoso, hormigón gris. Motivo recurrente: las
+   tres barras del logo como marcador de sección.
+   ===================================================================== */
+:root{
+  --ink:#15120F;
+  --bone:#F6F4EF;
+  --paper:#FFFFFF;
+  --red:#E2231A;
+  --red-dk:#B81810;
+  --concrete:#8C8880;
+  --soft:#6A655E;
+  --line:rgba(21,18,15,.13);
+  --line-2:rgba(21,18,15,.08);
+  --display:'Archivo', system-ui, sans-serif;
+  --body:'Inter', system-ui, -apple-system, sans-serif;
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bone);
+  -webkit-font-smoothing:antialiased;line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.sect{padding:110px 0}
+
+/* etiqueta de sección con las 3 barras (firma de marca) */
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--body);
+  font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+.eyebrow::before{content:"";width:20px;height:14px;flex:0 0 auto;
+  background:
+   linear-gradient(var(--red),var(--red)) 0 100%/4px 14px no-repeat,
+   linear-gradient(var(--red),var(--red)) 8px 100%/4px 9px no-repeat,
+   linear-gradient(var(--red),var(--red)) 16px 100%/4px 11px no-repeat}
+.eyebrow--light{color:rgba(255,255,255,.7)}
+
+.lead{font-size:1.18rem;color:var(--soft);max-width:60ch}
+.section-h{font-size:clamp(2.1rem,4.6vw,3.4rem);margin:.7rem 0 0;max-width:18ch}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;border:none;
+  font-family:var(--body);font-weight:600;font-size:.98rem;padding:.95rem 1.6rem;
+  transition:transform .15s,background .2s,color .2s;border-radius:2px}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-dk);transform:translateY(-2px)}
+.btn--ink{background:var(--ink);color:var(--bone)}
+.btn--ink:hover{transform:translateY(-2px)}
+.btn--out{background:transparent;border:1.5px solid currentColor}
+.btn--out:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* ---------- LOGO ---------- */
+.logo{display:inline-flex;align-items:center;gap:.6rem}
+.logo__bars{width:26px;height:26px;flex:0 0 auto}
+.logo__txt{display:flex;flex-direction:column;line-height:1}
+.logo__name{font-family:var(--display);font-weight:800;font-size:1.32rem;letter-spacing:.02em}
+.logo__tag{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-top:3px}
+
+/* ---------- HEADER ---------- */
+.head{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.86);
+  backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid var(--line-2)}
+.head__in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav{display:flex;align-items:center;gap:2rem}
+.nav a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;padding:.2rem 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:width .2s}
+.nav a:hover::after{width:100%}
+.head .btn{padding:.6rem 1.1rem;font-size:.88rem}
+.burger{display:none;background:none;border:none;cursor:pointer;color:var(--ink)}
+.burger svg{width:28px;height:28px}
+
+/* menú móvil */
+.mnav{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--bone);
+  display:none;flex-direction:column;padding:28px}
+.mnav.open{display:flex}
+.mnav__top{display:flex;justify-content:space-between;align-items:center}
+.mnav__top .logo__name,.mnav__top .logo__tag{color:var(--bone)}
+.mnav a{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--bone);
+  padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.mnav__x{background:none;border:none;color:var(--bone);cursor:pointer}
+.mnav__x svg{width:30px;height:30px}
+.mnav__links{margin-top:30px;display:flex;flex-direction:column}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:90vh;display:flex;align-items:flex-end;
+  color:#fff;overflow:hidden}
+.hero__img{position:absolute;inset:0}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,8,6,.35) 0%,rgba(10,8,6,.1) 35%,rgba(10,8,6,.78) 100%)}
+.hero__in{position:relative;z-index:2;width:100%;padding-bottom:64px}
+.hero h1{font-size:clamp(2.8rem,7.5vw,6rem);font-weight:800;max-width:16ch;
+  text-shadow:0 2px 30px rgba(0,0,0,.3)}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero__sub{font-size:1.15rem;max-width:46ch;margin:1.2rem 0 1.8rem;color:rgba(255,255,255,.9)}
+.hero__cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero__scroll{position:absolute;right:28px;bottom:28px;z-index:2;font-size:.72rem;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);
+  writing-mode:vertical-rl}
+
+/* ---------- VERTICALES ---------- */
+.verts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:54px}
+.vert{position:relative;aspect-ratio:3/4;overflow:hidden;color:#fff;display:flex;
+  align-items:flex-end;cursor:pointer}
+.vert img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease}
+.vert::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+.vert:hover img{transform:scale(1.06)}
+.vert__body{position:relative;z-index:2;padding:28px}
+.vert__num{font-family:var(--display);font-weight:600;font-size:.8rem;color:var(--red);
+  letter-spacing:.1em}
+.vert__name{font-size:1.9rem;font-weight:700;margin:.3rem 0 .4rem}
+.vert__desc{font-size:.95rem;color:rgba(255,255,255,.85);max-width:32ch}
+.vert__link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;
+  font-size:.84rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.vert__link svg{width:16px;height:16px;transition:transform .2s}
+.vert:hover .vert__link svg{transform:translateX(4px)}
+
+/* ---------- NOSOTROS ---------- */
+.about{background:var(--paper)}
+.about__in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about__media{position:relative}
+.about__media img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about__media .tagmark{position:absolute;left:-1px;bottom:-1px;background:var(--red);
+  color:#fff;font-family:var(--display);font-weight:700;font-size:1.1rem;
+  padding:18px 22px;max-width:62%;line-height:1.1}
+.about p{margin-top:1.4rem;color:var(--soft)}
+.about__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.4rem;
+  border-top:1px solid var(--line);padding-top:2rem}
+.about__stats b{font-family:var(--display);font-size:2.4rem;font-weight:700;display:block;line-height:1}
+.about__stats span{font-size:.86rem;color:var(--soft)}
+
+/* ---------- SERVICIOS ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;
+  background:var(--line);border:1px solid var(--line)}
+.svc{background:var(--bone);padding:36px 32px;transition:background .2s}
+.svc:hover{background:var(--paper)}
+.svc__n{font-family:var(--display);font-weight:600;font-size:.82rem;color:var(--red)}
+.svc h3{font-size:1.4rem;margin:.7rem 0 .5rem}
+.svc p{font-size:.96rem;color:var(--soft)}
+.invest{margin-top:56px;background:var(--ink);color:var(--bone);padding:48px;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.invest h3{font-size:1.9rem;color:#fff}
+.invest p{color:rgba(246,244,239,.78);margin-top:.8rem}
+
+/* ---------- PROCESO ---------- */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px;counter-reset:p}
+.proc__i{border-top:2px solid var(--ink);padding-top:1rem}
+.proc__i::before{counter-increment:p;content:"0" counter(p);font-family:var(--display);
+  font-weight:700;font-size:2.2rem;color:var(--red);display:block;line-height:1;margin-bottom:.5rem}
+.proc__i h3{font-size:1.15rem;margin-bottom:.3rem}
+.proc__i p{font-size:.92rem;color:var(--soft)}
+
+/* ---------- PORTAFOLIO ---------- */
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem}
+.filter{background:transparent;border:1px solid var(--line);color:var(--ink);
+  font-family:var(--body);font-size:.86rem;font-weight:500;padding:.5rem 1.1rem;
+  border-radius:2px;cursor:pointer;transition:.18s}
+.filter:hover{border-color:var(--ink)}
+.filter.active{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:36px}
+.pf{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--line)}
+.pf img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.pf:hover img{transform:scale(1.07)}
+.pf__cap{position:absolute;inset:auto 0 0 0;z-index:2;padding:20px 18px 16px;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));
+  transform:translateY(8px);opacity:0;transition:.25s}
+.pf:hover .pf__cap{transform:none;opacity:1}
+.pf__cat{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:600}
+.pf__t{font-family:var(--display);font-weight:600;font-size:1.05rem;margin-top:.2rem}
+.pf.is-hidden{display:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(12,9,6,.94);display:none;
+  align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:80vh;object-fit:contain}
+.lb__cap{position:absolute;left:0;right:0;bottom:26px;text-align:center;color:#fff;font-size:.95rem}
+.lb__cap b{font-family:var(--display);display:block;font-size:1.1rem}
+.lb__cap span{color:var(--red);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+.lb__x,.lb__nav{position:absolute;background:rgba(255,255,255,.1);border:none;color:#fff;
+  cursor:pointer;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;transition:.2s}
+.lb__x:hover,.lb__nav:hover{background:var(--red)}
+.lb__x{top:24px;right:24px}.lb__x svg,.lb__nav svg{width:24px;height:24px}
+.lb__nav{top:50%;transform:translateY(-50%)}
+.lb__prev{left:24px}.lb__next{right:24px}
+
+/* ---------- CONTACTO ---------- */
+.contact{background:var(--ink);color:var(--bone)}
+.contact .eyebrow{color:rgba(246,244,239,.7)}
+.contact .section-h{color:#fff}
+.contact__in{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px;align-items:start}
+.cinfo{display:flex;flex-direction:column;gap:1.6rem}
+.cinfo__row{display:flex;gap:1rem;align-items:flex-start}
+.cinfo__row svg{width:22px;height:22px;color:var(--red);flex:0 0 auto;margin-top:3px}
+.cinfo__row b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem}
+.cinfo__row a,.cinfo__row span{color:rgba(246,244,239,.78)}
+.cmap{margin-top:.6rem;border:1px solid rgba(255,255,255,.14)}
+.cmap iframe{display:block;width:100%;height:220px;border:0;filter:grayscale(.4) contrast(1.05)}
+.cform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:30px}
+.cf{margin-bottom:16px}
+.cf label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.4rem}
+.cf input,.cf select,.cf textarea{width:100%;font-family:var(--body);font-size:1rem;
+  background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:#fff;
+  padding:.8rem .9rem;border-radius:2px}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(246,244,239,.45)}
+.cf input:focus,.cf select:focus,.cf textarea:focus{outline:none;border-color:var(--red)}
+.cf.err input,.cf.err select{border-color:var(--red)}
+.cf .e{display:none;color:#ff9b93;font-size:.78rem;margin-top:.3rem}
+.cf.err .e{display:block}
+.cform__ok{display:none;text-align:center;padding:24px 8px}
+.cform.done .cform__body{display:none}
+.cform.done .cform__ok{display:block}
+.cform__ok h3{color:#fff;font-size:1.5rem;margin-bottom:.5rem}
+.cform__ok p{color:rgba(246,244,239,.8);margin-bottom:1.2rem}
+
+/* ---------- FOOTER ---------- */
+.foot{background:#0E0C0A;color:rgba(246,244,239,.62);padding:64px 0 30px}
+.foot__in{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.foot .logo__name{color:var(--bone)}.foot .logo__tag{color:rgba(246,244,239,.5)}
+.foot h4{font-family:var(--body);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--bone);margin:0 0 1rem}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem;font-size:.94rem}
+.foot a:hover{color:var(--bone)}
+.foot__by{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:.82rem}
+.foot__by .red{color:var(--red);font-family:var(--display);font-weight:700;letter-spacing:.04em}
+
+/* WhatsApp flotante */
+.wafab{position:fixed;right:20px;bottom:20px;z-index:55;width:56px;height:56px;border-radius:50%;
+  background:#1faa55;color:#fff;display:grid;place-items:center;
+  box-shadow:0 14px 34px -10px rgba(31,170,85,.7);transition:transform .2s}
+.wafab:hover{transform:translateY(-3px)}
+.wafab svg{width:28px;height:28px}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .nav{display:none}.head .btn{display:none}.burger{display:block}
+  .verts{grid-template-columns:1fr}
+  .about__in,.contact__in,.invest{grid-template-columns:1fr}
+  .svc-grid,.proc{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .foot__in{grid-template-columns:1fr 1fr}
+  .about__media{order:-1}
+  .sect{padding:78px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .svc-grid,.proc,.grid,.about__stats,.foot__in{grid-template-columns:1fr}
+  .hero{min-height:84vh}
+  .invest{padding:32px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+
+<!-- ===================== HEADER ===================== -->
+<header class="head">
+  <div class="wrap head__in">
+    <a class="logo" href="#top" aria-label="Hause — inicio">
+      <svg class="logo__bars" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="2"  y="6"  width="5" height="20" fill="var(--red)"/>
+        <rect x="10" y="0"  width="5" height="26" fill="var(--ink)"/>
+        <rect x="18" y="10" width="5" height="16" fill="var(--red)"/>
+      </svg>
+      <span class="logo__txt">
+        <span class="logo__name">HAUSE</span>
+        <span class="logo__tag">arquitectura + construcción</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#verticales">Verticales</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn--red" href="#contacto">Iniciar proyecto</a>
+    <button class="burger" id="burger" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- menú móvil -->
+<div class="mnav" id="mnav">
+  <div class="mnav__top">
+    <span class="logo"><span class="logo__txt"><span class="logo__name">HAUSE</span><span class="logo__tag">arquitectura + construcción</span></span></span>
+    <button class="mnav__x" id="mnavX" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav class="mnav__links">
+    <a href="#verticales">Verticales</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero__img"><img src="img/hero.jpg" alt="Proyecto residencial contemporáneo de Hause" /></div>
+  <div class="wrap hero__in">
+    <span class="eyebrow eyebrow--light">Arquitectura + Construcción · Asunción</span>
+    <h1>Mejores <em>espacios</em>.</h1>
+    <p class="hero__sub">Diseñamos y construimos proyectos residenciales, comerciales y corporativos. Un solo equipo, del primer boceto a la entrega de obra.</p>
+    <div class="hero__cta">
+      <a class="btn btn--red" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn--out" href="#contacto" style="color:#fff">Hablemos de tu obra</a>
+    </div>
+  </div>
+  <span class="hero__scroll">Scroll</span>
+</section>
+
+<!-- ===================== VERTICALES ===================== -->
+<section class="sect" id="verticales">
+  <div class="wrap">
+    <span class="eyebrow">Tres verticales</span>
+    <h2 class="section-h">Diseño y construcción para cada tipo de espacio.</h2>
+    <div class="verts">
+      <div class="vert" data-go="residencial">
+        <img src="img/res-02.jpg" alt="Arquitectura residencial" />
+        <div class="vert__body">
+          <span class="vert__num">01</span>
+          <h3 class="vert__name">Residencial</h3>
+          <p class="vert__desc">Viviendas, remodelaciones, piscinas y quinchos, e interiores a medida.</p>
+          <span class="vert__link">Ver obras <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="vert" data-go="comercial">
+        <img src="img/com-01.jpg" alt="Arquitectura comercial" />
+        <div class="vert__body">
+          <span class="vert__num">02</span>
+          <h3 class="vert__name">Comercial</h3>
+          <p class="vert__desc">Locales y retail, sucursales, showrooms y espacios de atención al público.</p>
+          <span class="vert__link">Ver obras <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="vert" data-go="corporativa">
+        <img src="img/corp-01.jpg" alt="Arquitectura corporativa" />
+        <div class="vert__body">
+          <span class="vert__num">03</span>
+          <h3 class="vert__name">Corporativa</h3>
+          <p class="vert__desc">Oficinas y edificios corporativos, espacios de trabajo y áreas comunes.</p>
+          <span class="vert__link">Ver obras <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NOSOTROS ===================== -->
+<section class="sect about" id="nosotros">
+  <div class="wrap about__in">
+    <div class="about__media">
+      <img src="img/res-05.jpg" alt="Interior de obra de Hause" />
+      <div class="tagmark">+15 años creando mejores espacios</div>
+    </div>
+    <div>
+      <span class="eyebrow">Nosotros</span>
+      <h2 class="section-h">Un equipo de arquitectura y construcción.</h2>
+      <p>Hause es un equipo de arquitectura y construcción con más de 15 años de experiencia. Apuntamos al diseño innovador y a la alta calidad constructiva de nuestras obras.</p>
+      <p>Realizamos proyectos arquitectónicos, ejecución, dirección, administración y fiscalización de obras, además de asesoramiento y proyectos para inversiones inmobiliarias.</p>
+      <div class="about__stats">
+        <div><b>+15</b><span>años de experiencia</span></div>
+        <div><b>3</b><span>verticales de obra</span></div>
+        <div><b>100%</b><span>diseño + obra propios</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICIOS ===================== -->
+<section class="sect" id="servicios">
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h2 class="section-h">De la idea a la obra terminada.</h2>
+    <div class="svc-grid">
+      <div class="svc"><span class="svc__n">01</span><h3>Proyectos</h3><p>Diseñamos proyectos funcionales e innovadores, de gran calidad espacial y arquitectónica, con todos los requerimientos técnicos y constructivos.</p></div>
+      <div class="svc"><span class="svc__n">02</span><h3>Construcción</h3><p>Ejecutamos obras residenciales, comerciales, edificios corporativos y de departamentos, avalados por años de experiencia en el rubro.</p></div>
+      <div class="svc"><span class="svc__n">03</span><h3>Diseño interior</h3><p>Desarrollamos proyectos integrales y equipamiento de interiores comerciales, corporativos y residenciales, funcionales y de calidad estética.</p></div>
+      <div class="svc"><span class="svc__n">04</span><h3>Dirección y fiscalización</h3><p>Dirigimos y fiscalizamos la obra para asegurar que lo construido respete el proyecto, los plazos y el presupuesto acordado.</p></div>
+      <div class="svc"><span class="svc__n">05</span><h3>Administración de obra</h3><p>Gestionamos compras, equipos y avance para que la obra fluya sin sobresaltos, con control de costos en cada etapa.</p></div>
+      <div class="svc"><span class="svc__n">06</span><h3>Remodelaciones</h3><p>Renovamos y ampliamos espacios existentes, residenciales y comerciales, sacando el máximo provecho de lo que ya está construido.</p></div>
+    </div>
+
+    <div class="invest">
+      <div>
+        <span class="eyebrow eyebrow--light">Inversiones inmobiliarias</span>
+        <h3 style="margin-top:.6rem">Asesoramiento y proyectos para inversores.</h3>
+        <p>Acompañamos a quienes buscan invertir en inmuebles: análisis de oportunidad, anteproyectos y desarrollo de obra pensados para rentabilidad, no solo para construir.</p>
+      </div>
+      <div style="text-align:right">
+        <a class="btn btn--red" href="#contacto">Conversemos una inversión</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESO ===================== -->
+<section class="sect about" id="proceso">
+  <div class="wrap">
+    <span class="eyebrow">Cómo trabajamos</span>
+    <h2 class="section-h">Un proceso claro, de principio a fin.</h2>
+    <div class="proc">
+      <div class="proc__i"><h3>Consulta</h3><p>Entendemos tu necesidad, el terreno o local, el uso y el presupuesto.</p></div>
+      <div class="proc__i"><h3>Proyecto</h3><p>Anteproyecto, planos y diseño. Lo definimos juntos antes de avanzar.</p></div>
+      <div class="proc__i"><h3>Presupuesto</h3><p>Presupuesto y plazos cerrados, por escrito, antes de iniciar la obra.</p></div>
+      <div class="proc__i"><h3>Obra y entrega</h3><p>Construcción dirigida por nuestro equipo y entrega del espacio terminado.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROYECTOS ===================== -->
+<section class="sect" id="proyectos">
+  <div class="wrap">
+    <div class="pf-head">
+      <div>
+        <span class="eyebrow">Proyectos</span>
+        <h2 class="section-h">Obras que hablan por nosotros.</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-f="all">Todos</button>
+        <button class="filter" data-f="residencial">Residencial</button>
+        <button class="filter" data-f="comercial">Comercial</button>
+        <button class="filter" data-f="corporativa">Corporativa</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"><!-- render dinámico --></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section class="sect contact" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h2 class="section-h">Construyamos tu próximo espacio.</h2>
+    <div class="contact__in">
+      <div class="cinfo">
+        <p class="lead" style="color:rgba(246,244,239,.8)">Contanos qué tenés en mente. Coordinamos una visita y empezamos a darle forma a tu proyecto.</p>
+        <div class="cinfo__row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Estudio</b><span>Manduvirá 1130 · Asunción, Paraguay</span></div>
+        </div>
+        <div class="cinfo__row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+          <div><b>Teléfono</b><a href="tel:+595972827903">+595 972 827903</a> · <a href="tel:+595981902272">+595 981 902272</a></div>
+        </div>
+        <div class="cinfo__row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><b>Email</b><a href="mailto:sole.gonzalez@hause.com.py">sole.gonzalez@hause.com.py</a></div>
+        </div>
+        <div class="cmap">
+          <iframe title="Ubicación de Hause" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Manduvir%C3%A1%201130%2C%20Asunci%C3%B3n%2C%20Paraguay&output=embed"></iframe>
+        </div>
+      </div>
+
+      <div class="cform" id="cform">
+        <div class="cform__body">
+          <div class="cf" data-f="name"><label for="c_name">Nombre</label><input id="c_name" type="text" placeholder="Tu nombre"><span class="e">Ingresá tu nombre.</span></div>
+          <div class="cf" data-f="contact"><label for="c_contact">Email o WhatsApp</label><input id="c_contact" type="text" placeholder="Para poder responderte"><span class="e">Dejanos un contacto válido.</span></div>
+          <div class="cf"><label for="c_type">Tipo de proyecto</label>
+            <select id="c_type">
+              <option value="">Seleccioná una opción</option>
+              <option>Residencial</option><option>Comercial</option><option>Corporativa</option>
+              <option>Inversión inmobiliaria</option><option>Remodelación</option><option>Otro</option>
+            </select>
+          </div>
+          <div class="cf"><label for="c_msg">Tu proyecto</label><textarea id="c_msg" rows="3" placeholder="Contanos qué necesitás (ubicación, m², etapa, etc.)"></textarea></div>
+          <button class="btn btn--red" style="width:100%;justify-content:center" id="cSubmit" type="button">Enviar consulta</button>
+        </div>
+        <div class="cform__ok">
+          <h3>¡Gracias!</h3>
+          <p>Recibimos tu consulta. Si querés, seguimos ahora mismo por WhatsApp.</p>
+          <a class="btn btn--red" style="width:100%;justify-content:center" id="cWa" href="#" target="_blank" rel="noopener">Continuar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:16px">
+          <svg class="logo__bars" viewBox="0 0 26 26" aria-hidden="true"><rect x="2" y="6" width="5" height="20" fill="var(--red)"/><rect x="10" y="0" width="5" height="26" fill="#fff"/><rect x="18" y="10" width="5" height="16" fill="var(--red)"/></svg>
+          <span class="logo__txt"><span class="logo__name">HAUSE</span><span class="logo__tag">arquitectura + construcción</span></span>
+        </a>
+        <p style="max-width:34ch;font-size:.94rem">Estudio de arquitectura y construcción en Asunción. Diseñamos y construimos mejores espacios.</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="#verticales">Verticales</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Manduvirá 1130, Asunción</li>
+          <li><a href="tel:+595972827903">+595 972 827903</a></li>
+          <li><a href="mailto:sole.gonzalez@hause.com.py">sole.gonzalez@hause.com.py</a></li>
+          <li><a id="footWa" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__by">
+      <span>© <span id="yr"></span> Hause · Arquitectura + Construcción</span>
+      <span class="red">MEJORES ESPACIOS</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wafab" id="waFab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.523 5.26l-.999 3.648 3.965-1.042z"/></svg>
+</a>
+
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen de proyecto">
+  <button class="lb__x" id="lbX" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb__nav lb__prev" id="lbPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img id="lbImg" src="" alt="" />
+  <button class="lb__nav lb__next" id="lbNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="lb__cap"><span id="lbCat"></span><b id="lbT"></b></div>
+</div>
+
+<script>
+/* ---------- CONFIG ---------- */
+const HAUSE = {
+  whatsapp: "595972827903",
+  whatsappText: "Hola Hause 👋 quiero consultar por un proyecto.",
+  email: "sole.gonzalez@hause.com.py",
+  crmEndpoint: ""   // opcional: pegá tu webhook/endpoint para guardar consultas
+};
+
+/* ---------- proyectos (editá / sumá obras acá) ---------- */
+const PROJECTS = [
+  {img:"res-02", cat:"residencial", t:"Casa moderna"},
+  {img:"res-01", cat:"residencial", t:"Residencia con piscina"},
+  {img:"res-08", cat:"residencial", t:"Vivienda contemporánea"},
+  {img:"res-04", cat:"residencial", t:"Casa de ladrillo visto"},
+  {img:"res-06", cat:"residencial", t:"Vivienda y piscina"},
+  {img:"res-09", cat:"residencial", t:"Comedor y cocina"},
+  {img:"res-07", cat:"residencial", t:"Piscina revestida"},
+  {img:"res-03", cat:"residencial", t:"Vivienda de dos plantas"},
+  {img:"res-10", cat:"residencial", t:"Casa con jardín y pileta"},
+  {img:"res-05", cat:"residencial", t:"Estar en ladrillo visto"},
+  {img:"res-11", cat:"residencial", t:"Jardín vertical"},
+  {img:"res-12", cat:"residencial", t:"Casa minimalista"},
+  {img:"com-01", cat:"comercial", t:"Vago's · Local de indumentaria"},
+  {img:"com-02", cat:"comercial", t:"Vago's · Interior de tienda"},
+  {img:"com-03", cat:"comercial", t:"Auto Fácil · Showroom"},
+  {img:"com-04", cat:"comercial", t:"Wonderland · Espacio infantil"},
+  {img:"com-05", cat:"comercial", t:"EMSA · Oficina inmobiliaria"},
+  {img:"com-06", cat:"comercial", t:"Aquí Pago · Centro de pagos"},
+  {img:"com-07", cat:"comercial", t:"Colores del Mundo · Agencia"},
+  {img:"com-08", cat:"comercial", t:"Punto de atención al público"},
+  {img:"corp-01", cat:"corporativa", t:"Sala de directorio"},
+  {img:"corp-02", cat:"corporativa", t:"Escalera escultórica"},
+  {img:"corp-05", cat:"corporativa", t:"Oficina operativa"},
+  {img:"corp-04", cat:"corporativa", t:"Sala de espera"},
+  {img:"corp-03", cat:"corporativa", t:"Circulación corporativa"},
+  {img:"corp-06", cat:"corporativa", t:"Sala de reunión"}
+];
+const CATLABEL = {residencial:"Residencial", comercial:"Comercial", corporativa:"Corporativa"};
+
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const waLink = (extra="") => "https://wa.me/"+HAUSE.whatsapp+"?text="+encodeURIComponent(HAUSE.whatsappText+(extra?"\n"+extra:""));
+
+/* enlaces de marca */
+$("#yr").textContent = new Date().getFullYear();
+$("#waFab").href = waLink();
+$("#footWa").href = waLink();
+
+/* menú móvil */
+$("#burger").addEventListener("click", ()=> $("#mnav").classList.add("open"));
+$("#mnavX").addEventListener("click", ()=> $("#mnav").classList.remove("open"));
+$$("#mnav a").forEach(a=>a.addEventListener("click", ()=> $("#mnav").classList.remove("open")));
+
+/* verticales → filtran el portafolio */
+$$(".vert").forEach(v=>v.addEventListener("click", ()=>{
+  applyFilter(v.dataset.go);
+  $("#proyectos").scrollIntoView({behavior:"smooth"});
+}));
+
+/* render del portafolio */
+const grid = $("#grid");
+PROJECTS.forEach((p,i)=>{
+  const el=document.createElement("div");
+  el.className="pf"; el.dataset.cat=p.cat; el.dataset.i=i;
+  el.innerHTML=`<img src="img/${p.img}.jpg" alt="${p.t}" loading="lazy">
+    <div class="pf__cap"><div class="pf__cat">${CATLABEL[p.cat]}</div><div class="pf__t">${p.t}</div></div>`;
+  el.addEventListener("click", ()=>openLB(i));
+  grid.appendChild(el);
+});
+
+/* filtros */
+function applyFilter(f){
+  $$(".filter").forEach(b=>b.classList.toggle("active", b.dataset.f===f));
+  $$(".pf").forEach(el=> el.classList.toggle("is-hidden", !(f==="all"||el.dataset.cat===f)));
+}
+$$(".filter").forEach(b=> b.addEventListener("click", ()=>applyFilter(b.dataset.f)));
+
+/* lightbox */
+const lb=$("#lb"); let lbList=[], lbIdx=0;
+function visibleProjects(){
+  const active=$(".filter.active").dataset.f;
+  return PROJECTS.map((p,i)=>({...p,i})).filter(p=>active==="all"||p.cat===active);
+}
+function openLB(globalIdx){
+  lbList=visibleProjects(); lbIdx=lbList.findIndex(p=>p.i===globalIdx);
+  if(lbIdx<0) lbIdx=0; renderLB(); lb.classList.add("open");
+}
+function renderLB(){
+  const p=lbList[lbIdx];
+  $("#lbImg").src="img/"+p.img+".jpg"; $("#lbImg").alt=p.t;
+  $("#lbT").textContent=p.t; $("#lbCat").textContent=CATLABEL[p.cat];
+}
+function step(n){ lbIdx=(lbIdx+n+lbList.length)%lbList.length; renderLB(); }
+$("#lbX").addEventListener("click", ()=>lb.classList.remove("open"));
+$("#lbPrev").addEventListener("click", ()=>step(-1));
+$("#lbNext").addEventListener("click", ()=>step(1));
+lb.addEventListener("click", e=>{ if(e.target===lb) lb.classList.remove("open"); });
+document.addEventListener("keydown", e=>{
+  if(!lb.classList.contains("open")) return;
+  if(e.key==="Escape") lb.classList.remove("open");
+  if(e.key==="ArrowLeft") step(-1);
+  if(e.key==="ArrowRight") step(1);
+});
+
+/* formulario de contacto */
+async function sendForm(){
+  const name=$("#c_name").value.trim();
+  const contact=$("#c_contact").value.trim();
+  let ok=true;
+  $('[data-f="name"]').classList.toggle("err", !name); if(!name) ok=false;
+  $('[data-f="contact"]').classList.toggle("err", contact.length<4); if(contact.length<4) ok=false;
+  if(!ok) return;
+  const payload={
+    name, contact, type:$("#c_type").value, message:$("#c_msg").value.trim(),
+    source: document.referrer||"directo", page:location.href, at:new Date().toISOString()
+  };
+  const btn=$("#cSubmit"); btn.disabled=true; btn.textContent="Enviando…";
+  if(HAUSE.crmEndpoint){
+    try{ await fetch(HAUSE.crmEndpoint,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});}
+    catch(e){ console.warn("CRM no respondió",e); }
+  } else { console.log("[Consulta — configurá HAUSE.crmEndpoint para guardarla]",payload); }
+  const msg=`Hola, soy ${name}. Consulta sobre proyecto ${payload.type||""}.`+(payload.message?` ${payload.message}`:"");
+  $("#cWa").href=waLink(msg);
+  $("#cform").classList.add("done");
+  btn.disabled=false; btn.textContent="Enviar consulta";
+}
+$("#cSubmit").addEventListener("click", sendForm);
+</script>
+</body>
+</html>
