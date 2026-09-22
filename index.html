@@ -5,15 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hause · Arquitectura + Construcción — Mejores espacios | Asunción, Paraguay</title>
 <meta name="description" content="Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos. Diseño y obra del mismo equipo." />
+<link rel="canonical" href="https://hause.com.py/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://hause.com.py/" />
+<meta property="og:site_name" content="Hause · Arquitectura + Construcción" />
 <meta property="og:title" content="Hause · Arquitectura + Construcción — Mejores espacios" />
 <meta property="og:description" content="Proyectos residenciales, comerciales y corporativos. Diseño y obra de un solo equipo. Asunción, Paraguay." />
-<meta property="og:image" content="img/og-cover.jpg" />
+<meta property="og:image" content="https://hause.com.py/img/og-cover.jpg" />
+<meta property="og:locale" content="es_PY" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ArchitectureFirm"],
+  "name": "HAUSE Arquitectura + Construcción",
+  "image": "https://hause.com.py/img/og-cover.jpg",
+  "url": "https://hause.com.py",
+  "telephone": "+595972827903",
+  "email": "sole.gonzalez@hause.com.py",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Manduvirá 1130",
+    "addressLocality": "Asunción",
+    "addressCountry": "PY"
+  },
+  "areaServed": "Asunción, Paraguay",
+  "description": "Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos."
+}
+</script>
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
 
 <style>
 /* =====================================================================
@@ -107,7 +141,7 @@ p{margin:0}
 .hero{position:relative;min-height:90vh;display:flex;align-items:flex-end;
   color:#fff;overflow:hidden}
 .hero__img{position:absolute;inset:0}
-.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__img img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero__img::after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(10,8,6,.35) 0%,rgba(10,8,6,.1) 35%,rgba(10,8,6,.78) 100%)}
 .hero__in{position:relative;z-index:2;width:100%;padding-bottom:64px}
@@ -267,6 +301,9 @@ p{margin:0}
   .foot__in{grid-template-columns:1fr 1fr}
   .about__media{order:-1}
   .sect{padding:78px 0}
+}
+@media (max-width:767px){
+  .hero__img img{object-position:65% center}
 }
 @media (max-width:560px){
   body{font-size:16px}
@@ -685,5 +722,7 @@ async function sendForm(){
 }
 $("#cSubmit").addEventListener("click", sendForm);
 </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
