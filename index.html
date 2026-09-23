@@ -7,36 +7,99 @@
 <meta name="description" content="Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos. Diseño y obra del mismo equipo." />
 <link rel="canonical" href="https://hause.com.py/" />
 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#E2231A" />
+
+<meta name="author" content="HAUSE Arquitectura + Construcción" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="geo.region" content="PY-ASU" />
+<meta name="geo.placename" content="Asunción, Paraguay" />
+<meta name="geo.position" content="-25.2867;-57.6470" />
+<meta name="ICBM" content="-25.2867, -57.6470" />
+
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hause.com.py/" />
 <meta property="og:site_name" content="Hause · Arquitectura + Construcción" />
 <meta property="og:title" content="Hause · Arquitectura + Construcción — Mejores espacios" />
 <meta property="og:description" content="Proyectos residenciales, comerciales y corporativos. Diseño y obra de un solo equipo. Asunción, Paraguay." />
 <meta property="og:image" content="https://hause.com.py/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Proyecto residencial contemporáneo de Hause Arquitectura" />
 <meta property="og:locale" content="es_PY" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hause · Arquitectura + Construcción — Mejores espacios" />
+<meta name="twitter:description" content="Proyectos residenciales, comerciales y corporativos. Diseño y obra de un solo equipo. Asunción, Paraguay." />
+<meta name="twitter:image" content="https://hause.com.py/img/og-cover.jpg" />
+<meta name="twitter:image:alt" content="Proyecto residencial contemporáneo de Hause Arquitectura" />
 
+<link rel="preload" as="image" href="/img/hero.jpg" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+<!-- TODO: cuando se confirmen los perfiles reales, agregar a este JSON-LD:
+     "sameAs": ["<URL de Instagram de HAUSE>", "<URL de Facebook de HAUSE>"] -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ArchitectureFirm"],
+  "@id": "https://hause.com.py/#business",
   "name": "HAUSE Arquitectura + Construcción",
-  "image": "https://hause.com.py/img/og-cover.jpg",
+  "alternateName": "Hause",
+  "image": [
+    "https://hause.com.py/img/og-cover.jpg",
+    "https://hause.com.py/img/hero.jpg"
+  ],
+  "logo": "https://hause.com.py/img/og-cover.jpg",
   "url": "https://hause.com.py",
-  "telephone": "+595972827903",
-  "email": "sole@hause.com.py",
+  "telephone": ["+595972827903", "+595981902272"],
+  "email": "sole.gonzalez@hause.com.py",
+  "foundingDate": "2009",
+  "description": "Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos. Diseño y obra del mismo equipo.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Manduvirá 1130",
     "addressLocality": "Asunción",
-    "addressCountry": "PY"
+    "addressRegion": "Asunción",
+    "addressCountry": "PY",
+    "postalCode": "1209"
   },
-  "areaServed": "Asunción, Paraguay",
-  "description": "Estudio de arquitectura y construcción con más de 15 años de experiencia en Asunción. Proyectos residenciales, comerciales y corporativos."
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -25.2867,
+    "longitude": -57.6470
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Asunción"
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de arquitectura y construcción",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Proyectos arquitectónicos"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Construcción residencial"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Construcción comercial"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Arquitectura corporativa"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño interior"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dirección y fiscalización de obras"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Remodelaciones"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asesoramiento en inversiones inmobiliarias"}}
+    ]
+  }
 }
 </script>
 
@@ -312,9 +375,17 @@ p{margin:0}
   .invest{padding:32px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:static;width:auto;height:auto;
+  background:var(--red);color:#fff;padding:.5rem 1rem;
+}
 </style>
 </head>
 <body id="top">
+<a href="#verticales" class="skip-link">Ir al contenido</a>
 
 <!-- ===================== HEADER ===================== -->
 <header class="head">
@@ -361,7 +432,7 @@ p{margin:0}
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="hero__img"><img src="img/hero.jpg" alt="Proyecto residencial contemporáneo de Hause" /></div>
+  <div class="hero__img"><img src="img/hero.jpg" alt="Proyecto residencial contemporáneo de Hause Arquitectura" fetchpriority="high" decoding="async" /></div>
   <div class="wrap hero__in">
     <span class="eyebrow eyebrow--light">Arquitectura + Construcción · Asunción</span>
     <h1>Mejores <em>espacios</em>.</h1>
@@ -381,7 +452,7 @@ p{margin:0}
     <h2 class="section-h">Diseño y construcción para cada tipo de espacio.</h2>
     <div class="verts">
       <div class="vert" data-go="residencial">
-        <img src="img/res-02.jpg" alt="Arquitectura residencial" />
+        <img src="img/res-02.jpg" alt="Arquitectura residencial" loading="lazy" decoding="async" />
         <div class="vert__body">
           <span class="vert__num">01</span>
           <h3 class="vert__name">Residencial</h3>
@@ -390,7 +461,7 @@ p{margin:0}
         </div>
       </div>
       <div class="vert" data-go="comercial">
-        <img src="img/com-01.jpg" alt="Arquitectura comercial" />
+        <img src="img/com-01.jpg" alt="Arquitectura comercial" loading="lazy" decoding="async" />
         <div class="vert__body">
           <span class="vert__num">02</span>
           <h3 class="vert__name">Comercial</h3>
@@ -399,7 +470,7 @@ p{margin:0}
         </div>
       </div>
       <div class="vert" data-go="corporativa">
-        <img src="img/corp-01.jpg" alt="Arquitectura corporativa" />
+        <img src="img/corp-01.jpg" alt="Arquitectura corporativa" loading="lazy" decoding="async" />
         <div class="vert__body">
           <span class="vert__num">03</span>
           <h3 class="vert__name">Corporativa</h3>
@@ -415,7 +486,7 @@ p{margin:0}
 <section class="sect about" id="nosotros">
   <div class="wrap about__in">
     <div class="about__media">
-      <img src="img/res-05.jpg" alt="Interior de obra de Hause" />
+      <img src="img/res-05.jpg" alt="Interior de obra de Hause" loading="lazy" decoding="async" />
       <div class="tagmark">+15 años creando mejores espacios</div>
     </div>
     <div>
@@ -658,7 +729,7 @@ const grid = $("#grid");
 PROJECTS.forEach((p,i)=>{
   const el=document.createElement("div");
   el.className="pf"; el.dataset.cat=p.cat; el.dataset.i=i;
-  el.innerHTML=`<img src="img/${p.img}.jpg" alt="${p.t}" loading="lazy">
+  el.innerHTML=`<img src="img/${p.img}.jpg" alt="${p.t}" loading="lazy" decoding="async">
     <div class="pf__cap"><div class="pf__cat">${CATLABEL[p.cat]}</div><div class="pf__t">${p.t}</div></div>`;
   el.addEventListener("click", ()=>openLB(i));
   grid.appendChild(el);
